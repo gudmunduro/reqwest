@@ -1,7 +1,11 @@
 //! multipart/form-data
 use std::borrow::Cow;
+use std::fs::File;
 use std::fmt;
 use std::pin::Pin;
+use std::io;
+use std::io::{self, Cursor, Read};
+use std::path::Path;
 
 use bytes::{Bytes};
 use http::HeaderMap;
